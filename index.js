@@ -86,4 +86,7 @@ const generateHtmlFromCsv = (filePath, title = null) => {
 		});
 };
 
-generateHtmlFromCsv("responses.csv", "Leadership Training Day 1 Responses");
+generateHtmlFromCsv(
+	"responses-day-3.csv",
+	"Leadership Training Day 3 Responses"
+);
