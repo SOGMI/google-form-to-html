@@ -4,3 +4,4 @@ node_modules
 public
 csv.config.js
 .temp
+lib
