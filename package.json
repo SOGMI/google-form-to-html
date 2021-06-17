@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "compile-css": "tailwindcss -i ./assets/styles.css -o ./.temp/styles.css",
-    "build": "npm run compile-css && tsc",
+    "build": "tsc",
     "start": "npm run build && node lib/index"
   },
   "author": "",
