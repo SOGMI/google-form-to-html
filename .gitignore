@@ -1,3 +1,6 @@
 *.csv
 node_modules
 *.html
+public
+csv.config.js
+.temp

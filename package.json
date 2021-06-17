@@ -4,13 +4,23 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile-css": "tailwindcss -i ./assets/styles.css -o ./.temp/styles.css",
+    "build": "npm run compile-css && tsc"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bulma": "^0.9.0",
-    "fast-csv": "^4.3.2",
-    "yargs": "^16.0.3"
+    "bulma": "^0.9.2",
+    "fast-csv": "^4.3.6",
+    "fs-extra": "^10.0.0",
+    "yargs": "^16.2.0"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^9.0.11",
+    "autoprefixer": "^10.2.6",
+    "postcss": "^8.3.5",
+    "postcss-cli": "^8.3.1",
+    "tailwindcss": "^2.2.0"
   }
 }
