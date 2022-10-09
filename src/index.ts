@@ -16,13 +16,13 @@ const css = readFileSync("./.temp/styles.css").toString();
 
 type FieldType = "short-text" | "long-text" | "date";
 
-interface FieldConfig {
+export interface FieldConfig {
   key: string;
   type: FieldType;
   fallbackValue?: string;
 }
 
-interface Config {
+export interface Config {
   input: string;
   output: string;
   title: string;
