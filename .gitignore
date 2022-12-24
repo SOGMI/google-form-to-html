@@ -5,3 +5,4 @@ public
 csv.config.js
 .temp
 lib
+csv.config*.js

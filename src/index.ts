@@ -49,8 +49,8 @@ const cardGenerator = (row: Row, config: Config): string => {
   const subtitle = row[config.subtitleField];
   if (title || subtitle) {
     innerHtml += `<div class="mb-4">\n`;
-    if (title) innerHtml += `<h2 class="font-bold text-2xl">${title}</h2>`;
-    if (subtitle) innerHtml += `<p class="text-xl">${subtitle}</p>`;
+    if (title) innerHtml += `<h2 class="font-bold text-xl">${title}</h2>`;
+    if (subtitle) innerHtml += `<p class="text-lg">${subtitle}</p>`;
   }
 
   for (const field of config.otherFields) {
@@ -94,10 +94,10 @@ const renderHtml = async (rows: Row[], config: Config) => {
   if (config.title || config.subtitle) {
     titleHtml += `<div class="mb-10 text-center">`;
     if (config.title) {
-      titleHtml += `<h1 class="text-4xl font-bold">${config.title}</h1>`;
+      titleHtml += `<h1 class="text-2xl font-bold">${config.title}</h1>`;
     }
     if (config.subtitle) {
-      titleHtml += `<div class="text-2xl font-bold">${config.subtitle}</div>`;
+      titleHtml += `<div class="text-xl font-bold">${config.subtitle}</div>`;
     }
     titleHtml += `</div>`;
   }
@@ -114,9 +114,9 @@ const renderHtml = async (rows: Row[], config: Config) => {
 </head>
 <body class="text-gray-700">
     <section class="py-20 px-10">
-        <div class="mx-auto relative container" style="max-width: 700px !important">
+        <div class="mx-auto relative container" style="max-width: 900px !important">
                 ${titleHtml}
-        <div class="flex flex-wrap -m-4">
+        <div class="flex flex-wrap -m-4 text-sm">
                 ${csvRowsToHtml(rows, config)}
             </div>
         </div>
