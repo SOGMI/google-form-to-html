@@ -1,9 +1,11 @@
 import {
   createReadStream,
+  createWriteStream,
   ensureFile,
   readFileSync,
   writeFile,
 } from "fs-extra";
+import wkhtmltopdf from "wkhtmltopdf";
 import path from "path";
 import { parse } from "fast-csv";
 import { execSync } from "child_process";
@@ -123,6 +125,23 @@ const renderHtml = async (rows: Row[], config: Config) => {
     </section>
 </body>
 </html>`;
+  const writeStream = createWriteStream(config.output);
+  wkhtmltopdf(html, {
+    pageSize: "Letter",
+    marginBottom: "20mm",
+    footerSpacing: 8,
+    footerRight: "[page] of [toPage]",
+  }).pipe(writeStream);
+
+  return new Promise((resolve, reject) => {
+    writeStream.on("finish", () => {
+      resolve(true);
+    });
+    writeStream.on("error", (err) => {
+      reject(err);
+    });
+  });
+
   await ensureFile(config.output);
   return writeFile(config.output, html);
 };
