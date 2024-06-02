@@ -1,16 +1,18 @@
-# CSV To HTML
+# CSV To PDF
 
-Simple tool that can take a csv file and convert it to HTML for easy printing.
+Simple tool that can take a csv file and convert it to PDF for easy printing.
 
 ## Prerequisites
 
 Install the latest version of nodejs
 
-Install dependencies
+Install npm dependencies
 
 ```
 npm install
 ```
+
+Install wkhtmltopdf
 
 ## Usage
 
@@ -23,7 +25,7 @@ Example config:
 ```js
 module.exports = {
   input: "./path-to-csv.csv",
-  output: "./path-to-output.html",
+  output: "./path-to-output.pdf",
   title: "Optional title to go at the top",
   subtitle: "Optional Subtitle to go at the top",
   titleField: "The title for each card",
