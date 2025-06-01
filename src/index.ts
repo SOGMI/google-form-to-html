@@ -66,7 +66,7 @@ const cardGenerator = (row: Row, config: Config): string => {
           break;
         case "long-text":
           fieldInnerHtml = `<p><strong>${field.key}</strong></p>
-                    <div>${value}</div>`;
+                    <div>${value.split("\n").map((val, i) => `<p class="${i > 0 ? 'mt-1' : ''}">${val}</p>`).join("\n")}</div>`;
           break;
         default:
           break;
