@@ -51,8 +51,8 @@ const cardGenerator = (row: Row, config: Config): string => {
   const subtitle = row[config.subtitleField];
   if (title || subtitle) {
     innerHtml += `<div class="mb-4">\n`;
-    if (title) innerHtml += `<h2 class="font-bold text-xl">${title}</h2>`;
-    if (subtitle) innerHtml += `<p class="text-lg">${subtitle}</p>`;
+    if (title) innerHtml += `<h2 class="font-bold text-lg">${title}</h2>`;
+    if (subtitle) innerHtml += `<p class="text-base">${subtitle}</p>`;
   }
 
   for (const field of config.otherFields) {
@@ -83,8 +83,8 @@ const cardGenerator = (row: Row, config: Config): string => {
     }
   }
 
-  const html = `<article class="p-4 w-full">
-        <div class="p-4 bg-white border border-gray-300 shadow rounded">
+  const html = `<article class="w-full">
+        <div class="pt-4 border-t-2 border-gray-300">
             ${innerHtml}
         </div>
     </article>`;
@@ -115,10 +115,10 @@ const renderHtml = async (rows: Row[], config: Config) => {
     </style>
 </head>
 <body class="text-gray-700">
-    <section class="py-20 px-10">
-        <div class="mx-auto relative container" style="max-width: 900px !important">
+    <section class="py-8 px-4">
+        <div class="mx-auto relative container" style="max-width: 800px !important">
                 ${titleHtml}
-        <div class="flex flex-wrap -m-4 text-sm">
+        <div class="flex flex-wrap -m-4 text-xs">
                 ${csvRowsToHtml(rows, config)}
             </div>
         </div>
